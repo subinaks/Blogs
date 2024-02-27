@@ -1,67 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Assignment Requirement Status
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+DataBase Design and Migration
 
-## About Laravel
+1.User Model:
+The User model and its corresponding migration have been completed.
+2. Post Model:
+The Post model and its corresponding migration have also been completed.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Database Seeding
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Two users' data have been seeded using a seeder. You can run  php artisan db:seed  to populate the database.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Authentication
 
-## Learning Laravel
+Laravel Breeze has been utilized for authentication, enabling handling of login, registration, password reset, email verification, and password confirmation. Additionally, Breeze includes a simple "profile" page where users may update their name, email address, and password.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+CRUD
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Basic CRUD operations for creating and modifying blogs have been implemented. Visitors can view all blogs, but only authors can modify them.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Middleware
 
-## Laravel Sponsors
+Middleware provides a convenient mechanism for inspecting and filtering HTTP requests entering your application. Here, the auth and verified middleware ensure that a user is authenticated before they can modify a blog post.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Blade Templates
 
-### Premium Partners
+Layouts have been created via "template inheritance" using the @section, @yield, and @extends directives.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Eloquent
 
-## Contributing
+Eloquent relationships are defined as methods on our Eloquent model classes. In this case, a HasOne relation with the Post model has been established for the User model.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Validation 
 
-## Code of Conduct
+A custom request, PostRequest class, has been created to encapsulate validation and authorization logic.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+Unit Testing
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Basic unit tests have been conducted to ensure that blog CRUD operations work perfectly.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Blogs
+Working Guide
+
+Laravel version : 10.45.1
+Php Version : 8.3.3
+
+I have utilized a Bootstrap blog template to display blogs. 
+
+
+Steps to Run the Project
+
+1. Clone the project from Git.
+2. Run composer update to update dependencies.
+3. Execute php artisan migrate to run migrations.
+4. Seed the database with sample data using php artisan db:seed.
+5. Start the Laravel development server with php artisan serve.
+
+
+Login sample credential after seeding you can use
+
+Email : john@example.com
+Password : password
+
+Alternatively, you can register as a new user.
+
+Visitors can view all blogs posted in this system, while only authors can make modifications.
+
+A demo video is attached for your reference, illustrating the functionality of this system.
+
+
+
